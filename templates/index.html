@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horários de Ônibus</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="icon" href="../static/images/icons8-ônibus-50.png">
+</head>
+<body>
+    <header>
+        <img src="../static/images/icons8-ônibus-50.png">
+        <h1>Horários de Ônibus</h1>
+    </header>
+    
+    
+
+    <!-- Seleção de Cidade -->
+    <label for="cidade">Selecione sua cidade:</label>
+    <select id="cidade">
+        <option value="Cidade1">Cidade1</option>
+        <option value="Cidade2">Cidade2</option>
+    </select>
+    <button onclick="obterRotas()">Ver Rotas</button>
+
+    <!-- Exibição de rotas -->
+    <div id="rotas"></div>
+
+    <!-- Localização Atual do Ônibus e Distância -->
+    <h2>Localização Atual do Ônibus</h2>
+    <button onclick="calcularDistancia()">Calcular Distância até o Ponto</button>
+    <p id="distancia"></p>
+
+    <!-- Map Placeholder -->
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
